@@ -12,5 +12,15 @@ export const config = {
 export default async function handler(
   req: NextApiRequest,
 ) {
-  return Response.json({ name: 'John Doe' })
+  return new Response(
+    JSON.stringify({
+      name: 'Jim Halpert',
+    }),
+    {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+      },
+    }
+  )
 }
